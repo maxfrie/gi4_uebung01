@@ -3,6 +3,18 @@
 
 int main(int argc, char* argv[], char* envp[]) 
 {
- if(getenv(argv[1]) != NULL) return 1;
- else return 0;
+  if(!strcmp(argv[1], "-v"))
+  {
+    if(getenv(argv[2]) != NULL)
+    {
+      printf("%s\n", getenv(argv[2]));
+      return 1;
+    }
+  }
+  else
+  {
+    if(getenv(argv[1]) != NULL) return 1;
+  }
+  
+ return 0;
 }
