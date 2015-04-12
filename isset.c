@@ -3,13 +3,10 @@
 
 int main(int argc, char* argv[], char* envp[]) 
 {
-  if(!strcmp(argv[1], "-v"))
+  if(!(strcmp(argv[1], "-v")) && getenv(argv[2]) != NULL)
   {
-    if(getenv(argv[2]) != NULL)
-    {
       printf("%s\n", getenv(argv[2]));
       return 1;
-    }
   }
   else
   {
