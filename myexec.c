@@ -8,8 +8,10 @@ int main(int argc, char* argv[], char* envp[])
 	printf("Prozess ID - parent: %d\n", getpid());
 	printf("Prozess ID - child: %d\n", pid);
   }
-  if(pid == 0)
+  else if(pid == 0)
 	execv(argv[1], argv+1);
+  else
+	printf("Es ist ein Fehler aufgetreten");
 
   return 0;
 }
